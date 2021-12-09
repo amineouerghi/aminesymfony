@@ -6,58 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="088e69f4-63aa-499c-bfb8-f32f8db19e2b" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20211202151001.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/css/fontawesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/css/lightbox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/css/owl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/css/tooplate-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/aerobic-girls.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/escalator-blue.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/girl-nature.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/logo-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/mountain-reflection.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/next.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/prev.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/woman-beach.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/woman-bikini.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/woman-chair-sunshine.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/woman-feeling.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/images/woman-pretty.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/js/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/js/isotope.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/js/lightbox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/assets/js/owl-carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BackOffice/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/base-back.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/demande_contart/approvecontrat.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/demande_contart/listcontrats.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assurance.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assurance.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ContratController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ContratController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DemandeContartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DemandeContartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Contrat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Contrat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/DemandeContart.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/DemandeContart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/DemandeContartType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DemandeContartType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contrat/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrat/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contrat/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contrat/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/demande_contart/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/demande_contart/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/demande_contart/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/demande_contart/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/demande_contart/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/demande_contart/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/demande_contart/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/demande_contart/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,11 +180,16 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.composer" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\assurance\src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\assurance\src\Controller" />
+      <recent name="C:\xampp\htdocs\assurance\templates" />
       <recent name="C:\xampp\htdocs\assurance\templates\demande_contart" />
     </key>
   </component>
@@ -258,7 +213,11 @@
       <workItem from="1638216459436" duration="6516000" />
       <workItem from="1638439825823" duration="11986000" />
       <workItem from="1638458790812" duration="6850000" />
-      <workItem from="1638519980261" duration="2219000" />
+      <workItem from="1638519980261" duration="3873000" />
+      <workItem from="1638904003627" duration="2496000" />
+      <workItem from="1638911068445" duration="19667000" />
+      <workItem from="1639086547463" duration="1873000" />
+      <workItem from="1639089160020" duration="912000" />
     </task>
     <servers />
   </component>

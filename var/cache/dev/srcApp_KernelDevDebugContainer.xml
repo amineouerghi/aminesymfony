@@ -349,6 +349,13 @@
     <service id="kernel" class="App\Kernel" public="true" synthetic="true">
       <tag name="routing.route_loader"/>
     </service>
+    <service id="App\Controller\CalendarController" class="App\Controller\CalendarController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\CalendarController"/>
+      </call>
+    </service>
     <service id="App\Controller\ContratController" class="App\Controller\ContratController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -363,17 +370,38 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\DemandeContartController"/>
       </call>
     </service>
+    <service id="App\Controller\MainController" class="App\Controller\MainController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainController"/>
+      </call>
+    </service>
+    <service id="App\Form\Calendar1Type" class="App\Form\Calendar1Type" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\ContratType" class="App\Form\ContratType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\DemandeContartType" class="App\Form\DemandeContartType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ContratRepository" class="App\Repository\ContratRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\DemandeContartRepository" class="App\Repository\DemandeContartRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TitleRepository" class="App\Repository\TitleRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -791,6 +819,8 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\Calendar1Type</argument>
+        <argument>App\Form\CalendarType</argument>
         <argument>App\Form\ContratType</argument>
         <argument>App\Form\DemandeContartType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1126,7 +1156,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.6G.cCkF"/>
+      <argument type="service" id=".service_locator.9EoJbuY"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4024,7 +4054,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.k99hYim"/>
+      <argument type="service" id=".service_locator.F8qEdt4"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5044,20 +5074,34 @@
       <tag name="twig.extension"/>
       <argument type="service" id="knp_paginator.helper.processor"/>
     </service>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\CalendarController" class="App\Controller\CalendarController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\ContratController" class="App\Controller\ContratController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\ContratController" class="App\Controller\ContratController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\ContratController" class="App\Controller\ContratController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DemandeContartController" class="App\Controller\DemandeContartController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DemandeContartController" class="App\Controller\DemandeContartController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DemandeContartController" class="App\Controller\DemandeContartController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\Calendar1Type" class="App\Form\Calendar1Type" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\Calendar1Type" class="App\Form\Calendar1Type" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CalendarType" class="App\Form\CalendarType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ContratType" class="App\Form\ContratType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ContratType" class="App\Form\ContratType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DemandeContartType" class="App\Form\DemandeContartType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\DemandeContartType" class="App\Form\DemandeContartType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CalendarRepository" class="App\Repository\CalendarRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ContratRepository" class="App\Repository\ContratRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ContratRepository" class="App\Repository\ContratRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DemandeContartRepository" class="App\Repository\DemandeContartRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DemandeContartRepository" class="App\Repository\DemandeContartRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TitleRepository" class="App\Repository\TitleRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TitleRepository" class="App\Repository\TitleRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.CmORmuK" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5339,6 +5383,31 @@
         <argument>make:migration</argument>
       </call>
     </service>
+    <service id=".service_locator.1lMDBp1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendarRepository" type="service_closure" id="App\Repository\CalendarRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.x8FmIZ0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
+    <service id=".service_locator.NF7cwmN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendar" type="service_closure" id=".errored..service_locator.NF7cwmN.App\Entity\Calendar"/>
+      </argument>
+    </service>
+    <service id=".service_locator.KJY554t" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="calendar" type="service_closure" id=".errored..service_locator.KJY554t.App\Entity\Calendar"/>
+        <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.n8gOTNr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5391,9 +5460,14 @@
         <argument key="entityManager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.RMyS_XM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.EY80DjD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Controller\CalendarController::delete" type="service_closure" id=".service_locator.KJY554t"/>
+        <argument key="App\Controller\CalendarController::edit" type="service_closure" id=".service_locator.KJY554t"/>
+        <argument key="App\Controller\CalendarController::index" type="service_closure" id=".service_locator.1lMDBp1"/>
+        <argument key="App\Controller\CalendarController::new" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\CalendarController::show" type="service_closure" id=".service_locator.NF7cwmN"/>
         <argument key="App\Controller\ContratController::delete" type="service_closure" id=".service_locator.v2TJ7tH"/>
         <argument key="App\Controller\ContratController::edit" type="service_closure" id=".service_locator.v2TJ7tH"/>
         <argument key="App\Controller\ContratController::index" type="service_closure" id=".service_locator.n8gOTNr"/>
@@ -5406,6 +5480,11 @@
         <argument key="App\Controller\DemandeContartController::index" type="service_closure" id=".service_locator.n8gOTNr"/>
         <argument key="App\Controller\DemandeContartController::new" type="service_closure" id=".service_locator.CjplhxF"/>
         <argument key="App\Controller\DemandeContartController::show" type="service_closure" id=".service_locator.gbK7E4q"/>
+        <argument key="App\Controller\CalendarController:delete" type="service_closure" id=".service_locator.KJY554t"/>
+        <argument key="App\Controller\CalendarController:edit" type="service_closure" id=".service_locator.KJY554t"/>
+        <argument key="App\Controller\CalendarController:index" type="service_closure" id=".service_locator.1lMDBp1"/>
+        <argument key="App\Controller\CalendarController:new" type="service_closure" id=".service_locator.x8FmIZ0"/>
+        <argument key="App\Controller\CalendarController:show" type="service_closure" id=".service_locator.NF7cwmN"/>
         <argument key="App\Controller\ContratController:delete" type="service_closure" id=".service_locator.v2TJ7tH"/>
         <argument key="App\Controller\ContratController:edit" type="service_closure" id=".service_locator.v2TJ7tH"/>
         <argument key="App\Controller\ContratController:index" type="service_closure" id=".service_locator.n8gOTNr"/>
@@ -5479,9 +5558,11 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.6G.cCkF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.9EoJbuY" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\Calendar1Type" type="service_closure" id="App\Form\Calendar1Type"/>
+        <argument key="App\Form\CalendarType" type="service_closure" id="App\Form\CalendarType"/>
         <argument key="App\Form\ContratType" type="service_closure" id="App\Form\ContratType"/>
         <argument key="App\Form\DemandeContartType" type="service_closure" id="App\Form\DemandeContartType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
@@ -5658,11 +5739,13 @@
       <argument type="service" id="cache.doctrine.orm.default.result"/>
       <factory class="Doctrine\Common\Cache\Psr6\DoctrineProvider" method="wrap"/>
     </service>
-    <service id=".service_locator.k99hYim" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.F8qEdt4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\CalendarRepository" type="service_closure" id="App\Repository\CalendarRepository"/>
         <argument key="App\Repository\ContratRepository" type="service_closure" id="App\Repository\ContratRepository"/>
         <argument key="App\Repository\DemandeContartRepository" type="service_closure" id="App\Repository\DemandeContartRepository"/>
+        <argument key="App\Repository\TitleRepository" type="service_closure" id="App\Repository\TitleRepository"/>
       </argument>
     </service>
     <service id="debug.security.voter.security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
@@ -5713,6 +5796,12 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\CalendarController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\CalendarController"/>
+      <argument>App\Controller\CalendarController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\ContratController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\ContratController"/>
       <argument>App\Controller\ContratController</argument>
@@ -5722,6 +5811,12 @@
     <service id=".service_locator.vdmMuyE.App\Controller\DemandeContartController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\DemandeContartController"/>
       <argument>App\Controller\DemandeContartController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\MainController"/>
+      <argument>App\Controller\MainController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -5871,12 +5966,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.RMyS_XM"/>
+      <argument type="service" id=".service_locator.EY80DjD"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.RMyS_XM"/>
+      <argument type="service" id=".service_locator.EY80DjD"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -5886,6 +5981,8 @@
       </call>
       <factory class="Symfony\Component\HttpClient\HttpClient" method="create"/>
     </service>
+    <service id=".errored..service_locator.NF7cwmN.App\Entity\Calendar" class="App\Entity\Calendar"/>
+    <service id=".errored..service_locator.KJY554t.App\Entity\Calendar" class="App\Entity\Calendar"/>
     <service id=".errored..service_locator.o7oLPGn.App\Entity\Contrat" class="App\Entity\Contrat"/>
     <service id=".errored..service_locator.v2TJ7tH.App\Entity\Contrat" class="App\Entity\Contrat"/>
     <service id=".errored..service_locator.gbK7E4q.App\Entity\DemandeContart" class="App\Entity\DemandeContart"/>
@@ -6281,7 +6378,7 @@
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.RMyS_XM"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.EY80DjD"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $consoleLogger" alias="monolog.logger.console"/>

@@ -100,7 +100,7 @@ class __TwigTemplate_c2218696045638ff663c15f659e8875dce3334387734ac6dc29eb07d04f
                 <th>Type_contrat</th>
                 <th>Date</th>
                 <th>Nature_contart</th>
-                
+
                 <th>actions</th>
             </tr>
         </thead>
@@ -247,7 +247,7 @@ class __TwigTemplate_c2218696045638ff663c15f659e8875dce3334387734ac6dc29eb07d04f
                 <th>Type_contrat</th>
                 <th>Date</th>
                 <th>Nature_contart</th>
-                
+
                 <th>actions</th>
             </tr>
         </thead>

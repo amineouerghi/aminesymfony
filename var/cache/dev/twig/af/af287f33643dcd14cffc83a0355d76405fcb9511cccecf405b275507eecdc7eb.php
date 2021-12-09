@@ -86,20 +86,21 @@ class __TwigTemplate_6a8799971c07b48cb1e8768a294bf208787c0138ebb2528b25e0b761875
 
         // line 6
         echo "    <h1>Create new Contrat</h1>
+    <div class=\"msg\">
     ";
-        // line 7
-        $context["flashbag_notices"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "session", [], "any", false, false, false, 7), "flashbag", [], "any", false, false, false, 7), "get", [0 => "notice"], "method", false, false, false, 7);
         // line 8
+        $context["flashbag_notices"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "session", [], "any", false, false, false, 8), "flashbag", [], "any", false, false, false, 8), "get", [0 => "notice"], "method", false, false, false, 8);
+        // line 9
         echo "    ";
-        if ( !twig_test_empty((isset($context["flashbag_notices"]) || array_key_exists("flashbag_notices", $context) ? $context["flashbag_notices"] : (function () { throw new RuntimeError('Variable "flashbag_notices" does not exist.', 8, $this->source); })()))) {
-            // line 9
+        if ( !twig_test_empty((isset($context["flashbag_notices"]) || array_key_exists("flashbag_notices", $context) ? $context["flashbag_notices"] : (function () { throw new RuntimeError('Variable "flashbag_notices" does not exist.', 9, $this->source); })()))) {
+            // line 10
             echo "        <ul class =\"msg\">
             ";
-            // line 10
+            // line 11
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["flashbag_notices"]) || array_key_exists("flashbag_notices", $context) ? $context["flashbag_notices"] : (function () { throw new RuntimeError('Variable "flashbag_notices" does not exist.', 10, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["flashbag_notices"]) || array_key_exists("flashbag_notices", $context) ? $context["flashbag_notices"] : (function () { throw new RuntimeError('Variable "flashbag_notices" does not exist.', 11, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["notice"]) {
-                // line 11
+                // line 12
                 echo "                <li>";
                 echo twig_escape_filter($this->env, $context["notice"], "html", null, true);
                 echo "</li>
@@ -108,19 +109,20 @@ class __TwigTemplate_6a8799971c07b48cb1e8768a294bf208787c0138ebb2528b25e0b761875
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['notice'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 13
+            // line 14
             echo "        </ul>
     ";
         }
-        // line 15
-        echo "
-    ";
         // line 16
+        echo "    </div>
+
+    ";
+        // line 18
         echo twig_include($this->env, $context, "contrat/_form.html.twig");
         echo "
 
     <a href=\"";
-        // line 18
+        // line 20
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contrat_index");
         echo "\">back to list</a>
 ";
@@ -144,7 +146,7 @@ class __TwigTemplate_6a8799971c07b48cb1e8768a294bf208787c0138ebb2528b25e0b761875
 
     public function getDebugInfo()
     {
-        return array (  124 => 18,  119 => 16,  116 => 15,  112 => 13,  103 => 11,  99 => 10,  96 => 9,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  126 => 20,  121 => 18,  117 => 16,  113 => 14,  104 => 12,  100 => 11,  97 => 10,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -155,6 +157,7 @@ class __TwigTemplate_6a8799971c07b48cb1e8768a294bf208787c0138ebb2528b25e0b761875
 
 {% block body %}
     <h1>Create new Contrat</h1>
+    <div class=\"msg\">
     {% set flashbag_notices = app.session.flashbag.get('notice') %}
     {% if flashbag_notices is not empty %}
         <ul class =\"msg\">
@@ -163,6 +166,7 @@ class __TwigTemplate_6a8799971c07b48cb1e8768a294bf208787c0138ebb2528b25e0b761875
             {% endfor %}
         </ul>
     {% endif %}
+    </div>
 
     {{ include('contrat/_form.html.twig') }}
 
